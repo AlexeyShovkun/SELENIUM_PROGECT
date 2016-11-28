@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import pages.MainPageNascar;
@@ -17,6 +18,7 @@ public class TestNascarMainPage {
 
     @BeforeSuite
     public void setup(){
+        System.setProperty("webdriver.chrome.driver", "D:\\ProjectsJava\\AutomationTest\\src\\test\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.navigate().to(URL);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
@@ -29,6 +31,7 @@ public class TestNascarMainPage {
         page.setEmailIntoEmailFieldInLoginForm("Test1");
         page.setPasswordIntoPasswordFieldInLoginForm("P@ssw0rd");
         page.submitLoginForm();
+        Assert.assertTrue(page.errorIsShow());
     }
 
 
