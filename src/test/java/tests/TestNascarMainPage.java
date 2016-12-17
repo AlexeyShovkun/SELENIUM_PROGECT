@@ -31,7 +31,7 @@ public class TestNascarMainPage {
         page.setEmailIntoEmailFieldInLoginForm("Test1");
         page.setPasswordIntoPasswordFieldInLoginForm("P@ssw0rd");
         page.submitLoginForm();
-        Assert.assertTrue(page.errorIsShow());
+        Assert.assertTrue(page.errorIsShow());// AR and ER
     }
 
 
